@@ -32,7 +32,43 @@
  <img src="https://static4.depositphotos.com/1011156/276/i/450/depositphotos_2769279-stock-photo-digital-program-code.jpg" width=180"><br>
 <p>I Like Coding!</p>
 	<script> src=/processing.min.js" type="text/javascript"></s
-	<script>ellipse (200, 200, 50, 50</script>
+
+int COUNT = 7;
+final int RAD = 300;
+ 
+float gX(float a){
+  return( RAD * cos( a * TWO_PI / COUNT ) );
+}
+ 
+float gY(float a){
+  return( RAD * sin( a * TWO_PI / COUNT ) );
+}
+ 
+void setup(){
+  size(666,666);
+}
+ 
+void draw(){
+  background(0);
+  translate( width/2, height/2);
+  stroke(255);
+  for(int i = 0; i < COUNT; i++){
+    for(int j = 0; j<i; j++){
+      line(gX(i), gY(i), gX(j), gY(j));
+    }
+  }
+  fill(128);
+  for(int i = 0; i < COUNT; i++){
+    ellipse( gX(i), gY(i), 20, 20);
+  }
+}
+ 
+void mousePressed(){
+  if( mouseButton == LEFT ){ COUNT--; }
+  if( mouseButton == RIGHT ){ COUNT++; }
+  if( COUNT < 0 ) { COUNT = 0; }
+}
+
   <br>
 <a href="/tools.html">Tools</a>
 <br>
