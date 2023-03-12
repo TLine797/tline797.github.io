@@ -4,24 +4,19 @@
         <meta charset="utf-8">
         <title>TLine797's Site</title>
         
-            <style>
-
-        h1 {
-            color: rgb(255, 255, 0);
-        }  
- body {
-            background-color: rgb(23, 52, 130);
-        }
-
-        li {color: rgb(255, 0, 255);}
-
-        a {color: rgb(255, 0, 255);}
-        
-        p {color: rgb(255, 0, 255);}
-        
-        div {color: rgb(255, 0, 255);}
-        </style>
-
+        <style>
+          body {
+            padding: 25px;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            font-size: 25px;
+          }
+          
+          .dark-mode {
+            background-color: rgb(255, 252, 252);
+            color: rgb(0, 0, 0);
+          }
+          </style>
     </head>
 				    <body>
 	
@@ -29,6 +24,19 @@
 	    <h1>My First Webpage</h1>
     
  <img src="https://static4.depositphotos.com/1011156/276/i/450/depositphotos_2769279-stock-photo-digital-program-code.jpg" width=180"><br>
+<br>
+<br>
+<br>
+<button onclick="myFunction()">On/Off</button>
+
+<script>
+function myFunction() {
+   var element = document.body;
+   element.classList.toggle("dark-mode");
+}
+</script>
+
+
 <p>I Like Coding!</p>
 
   <br>
