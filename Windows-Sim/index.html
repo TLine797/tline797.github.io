@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/style.css">
+
     <title>Windows Simualtor</title>
     <style>
     body {
@@ -12,10 +13,10 @@
       background-image: url('assets/Windows\ 10\ bg.png');
       background-size: 100%;
       background-repeat: no-repeat;
-  
+
     }
 
-        ul {
+    ul {
           list-style-type: none;
           margin: 0;
           padding: 0;
@@ -38,36 +39,53 @@
           text-decoration: none;
         }
         
-        li a:hover:not(.active) {
-          background-color: #252525;
-        }
-        
-        .active {
-          background-color: #111;
-        }
+
         .browser{
           transition: none;
         }
+        #div1 {
+  width: 200px;
+  height: 100px;
+  padding: 10px;
+  border: 1px solid #aaaaaa;
+  justify-items: center;
+}
+
         </style>
+        
         <script>
-        var browserName = (function (agent) {
-            switch (true) {
-                case agent.indexOf("edge") > -1: return "MS Edge";
-                case agent.indexOf("edg/") > -1: return "Edge ( chromium based)";
-                case agent.indexOf("opr") > -1 && !!window.opr: return "Opera";
-                case agent.indexOf("chrome") > -1 && !!window.chrome: return "Chrome";
-                case agent.indexOf("trident") > -1: return "MS IE";
-                case agent.indexOf("firefox") > -1: return "Mozilla Firefox";
-                case agent.indexOf("safari") > -1: return "Safari";
-                default: return "other";
-            }
-        })(window.navigator.userAgent.toLowerCase());
-    
-    document.querySelector(".browser").innerText="You are using "+ browserName +" browser";  
-      </script>
+          function allowDrop(ev) {
+            ev.preventDefault();
+          }
+          
+          function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+          }
+          
+          function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+          }
+          </script>
+<script>browserName = (function (agent) {
+  switch (true) {
+      case agent.indexOf("edge") > -1: return "MS Edge";
+      case agent.indexOf("edg/") > -1: return "Edge ( chromium based)";
+      case agent.indexOf("opr") > -1 && !!window.opr: return "Opera";
+      case agent.indexOf("chrome") > -1 && !!window.chrome: return "Chrome";
+      case agent.indexOf("trident") > -1: return "MS IE";
+      case agent.indexOf("firefox") > -1: return "Mozilla Firefox";
+      case agent.indexOf("safari") > -1: return "Safari";
+      default: return "other";
+  }
+})(window.navigator.userAgent.toLowerCase());
+
+document.querySelector(".browser").innerText="You are using "+ browserName +" browser";</script>
 </head>
 <body>
-    <ul>
+  <div class="Taskbar">
+    <ul class="Taskbar">
         <li><a class="active" href="#home"><img src="assets/windows-10-logo.png" width="20px"></a></li>
         <li><a href="#news"><img src="assets/Windows_Settings_app_icon.png" width="24px"></a></li>
         <li><a href="#contact"><img src="assets/Windows_11_Explorer.png" width="25px"></a></li>
@@ -77,6 +95,15 @@
         <li><a href="#about">About</a></li>
       </ul>
       </div>
-      
+      <div>
+
+      <br>
+    
+    </div>
+
+  </div>
+    
+    
+
 </body>
 </html>
